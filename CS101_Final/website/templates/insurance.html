@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Insurance{% endblock %} {% block content%}
+
+    <br>
+
+    <h1>Health Insurance Request Guide</h1>
+    <h4 class="dlDate">The suggested deadline for this item is: {{ healthDL }}</h4>
+
+    <br>
+
+    <h6 id="taskDesc">In an email you should have received from ISS, there is an excel spreadsheet with the information about the 2 different health insurance plans available to you. Fill out the boxes for information under "Application" and submit the spreadsheet to the formstack provided below.</h6> 
+    <br>
+
+    <div class="info">
+        <p>In summary, the difference between the two plans is this: Plan 1 costs more, but helps in covering high-cost providers. Plan 2 is cheaper, but does not.</p>
+        <p>In order to fill out the insurance request form, you first have to download <a href="https://prodduke-my.sharepoint.com/:x:/r/personal/keb125_duke_edu/_layouts/15/Doc.aspx?sourcedoc=%7B56FE15FF-AD7A-4C88-87CE-47ACFB1B59E9%7D&file=Medical%20insurance%20app-Duke%2020220725%20-%20seg2(2).xlsx&action=default&mobileredirect=true">this spreadsheet</a> and fill out your information in the columns pictured below.</p>
+        
+        <img id="healthguide" src="{{ url_for('static', filename='healthGuide.png') }}">
+
+        <br>
+        <br>
+        <p>Once you've filled that out, <a href="https://dukekunshan.formstack.com/forms/medical_insurance_info">here is the link to the request form.</a></p>
+    </div>
+    
+{% endblock %}
