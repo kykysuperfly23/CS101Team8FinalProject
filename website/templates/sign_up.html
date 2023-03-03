@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block content %}
+ 
+  <br>
+
+  <div class="header">
+    <img class="headerImage" src="{{ url_for('static', filename='Immigr8Logo.png') }}" alt="Home" />
+    <p class="pageDesc">Welcome to DKU Immigr8, the website designed to help DKU International Students obtain their residence permits to live and study in China! Once you sign up and provide your arrival date, we'll calculate the appropriate due dates for each neccessary task to obtain your residence permit!</p>
+  </div>
+
+  <br>
+  <div class="info">
+    <form method="POST">
+      <h3>Sign Up</h3>
+      <div class="form-group">
+        <label for="netID">DKU Net ID</label>
+        <input
+          type="netID"
+          class="form-control"
+          id="netID"
+          name="netID"
+          placeholder="Enter your DKU netID"
+        />
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="Enter first name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password2">Password (Confirm)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Confirm password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="dateOfEntry">Date of Entry to China</label>
+        <input
+            type="date"
+            class="form-control"
+            id="dateOfEntry"
+            name="dateOfEntry"
+            placeholder="Enter date of entry"
+        />
+    </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

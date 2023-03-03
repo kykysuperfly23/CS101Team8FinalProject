@@ -1,0 +1,127 @@
+{% extends "base.html" %} {% block title %}Homepage{% endblock %} {% block content%}
+<body>
+    <br>
+    
+    <h1>Welcome back, {{ username }}!</h1>
+    <h3>What item will you check today?</h3>
+
+    <br>
+
+    <ul id="mainpageUL">
+
+      <li class="homeLi">
+        <label>
+          <input type="checkbox" id="healthcare" name="healthcare" value="Health" {% if checkbox_map.healthcare %}checked{% endif %}>
+          <label for="healthcare"><a href="{{ url_for('views.insurance') }}"> Apply for Health Insurance</a></label>
+          <p class="mainDeadline{% if checkbox_map.healthcare %} deadline_passed{% endif %}">{{ insureDL }}</p>
+        </label>
+      </li>
+          
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="arrival" name="arrival" value="Plane" {% if checkbox_map.arrival%}checked{% endif %}>
+        <label for="arrival"><a href="{{ url_for('views.arrival')}}"> Arrive in China</a></label>
+        <p class="nonDeadline{% if checkbox_map.arrival %} nondeadline_passed{% endif %}">{{ arrivalDL }}</p>
+      </li>
+
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="accomodation" name="accomodation" value="Form" {% if checkbox_map.accomodation%}checked{% endif %}>
+        <label for="accomodation"><a href="{{ url_for('views.accomodation') }}">24hr Accomodation Form</a></label>
+        <p class="mainDeadline{% if checkbox_map.accomodation %} deadline_passed{% endif %}">{{ tfhrDL }}</p>
+      </li>
+
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="phonenumber" name="phonenumber" value="Phone" {% if checkbox_map.phonenumber%}checked{% endif %}>
+        <label for="phonenumber"><a href="{{ url_for('views.phone') }}">Obtain Chinese Phone Number</a></label>
+        <p class="mainDeadline{% if checkbox_map.phonenumber %} deadline_passed{% endif %}">{{ phoneDL }}</p>
+      </li>
+
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="bankacc" name="bankacc" value="Bank"  {% if checkbox_map.bankacc%}checked{% endif %}>
+        <label for="bankacc"><a href="{{ url_for('views.bank')}}">Obtain Chinese Bank Account</a></label>
+        <p class="mainDeadline{% if checkbox_map.bankacc %} deadline_passed{% endif %}">{{ bankDL }}</p>
+      </li>
+
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="healthcheckup" name="healthcheckup" value="Checkup" {% if checkbox_map.healthcheckup%}checked{% endif %}>
+        <label for="healthcheckup"><a href="{{ url_for('views.checkup') }}">Go to Health Checkup</a></label>
+        <p class="mainDeadline{% if checkbox_map.healthcheckup %} deadline_passed{% endif %}">{{ checkDL }}</p>
+      </li>
+
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="EEB" name="EEB" value="Bureau"  {% if checkbox_map.EEB%}checked{% endif %}>
+        <label for="EEB"><a href="{{ url_for('views.eeb') }}">Entry & Exit Bureau Appointment</a></label>
+        <p class="mainDeadline{% if checkbox_map.EEB %} deadline_passed{% endif %}">{{ eebDL }}</p>
+      </li>
+
+      <br class="homeBr">
+
+      <li class="homeLi">
+        <input type="checkbox" id="ResidencePermit" name="ResidencePermit" value="Permit"  {% if checkbox_map.ResidencePermit%}checked{% endif %}>
+        <label for="ResidencePermit" class="nonDeadline{% if checkbox_map.ResidencePermit %} nondeadline_passed{% endif %}">Receive Residence Permit!</label><br>
+      </li>
+
+    </ul>
+
+    <br>
+
+    <h3 id="extrahelp"><a href="{{ url_for('views.extra') }}">Extra Helpful Information</a></h3>
+    
+    <div id="button-div">
+      <button id="save-btn" onclick="updateChecklist()"> Save </button>
+    </div>
+
+</body>
+<script>
+
+  function updateChecklist() {
+    const healthcareCheckbox = document.getElementById('healthcare');
+    const arrivalCheckbox = document.getElementById('arrival');
+    const accomodationCheckbox = document.getElementById('accomodation');
+    const phonenumberCheckbox = document.getElementById('phonenumber');
+    const bankaccCheckbox = document.getElementById('bankacc');
+    const healthcheckupCheckbox = document.getElementById('healthcheckup');
+    const EEBCheckbox = document.getElementById('EEB');
+    const ResidencePermitCheckbox = document.getElementById('ResidencePermit');
+
+    const params = {
+      healthcare: healthcareCheckbox.checked,
+      arrival: arrivalCheckbox.checked,
+      accomodation: accomodationCheckbox.checked,
+      phonenumber: phonenumberCheckbox.checked,
+      bankacc: bankaccCheckbox.checked,
+      healthcheckup: healthcheckupCheckbox.checked,
+      EEB: EEBCheckbox.checked,
+      ResidencePermit: ResidencePermitCheckbox.checked
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/update_checklist');
+    xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // handle success response from server
+        location.reload();
+      } else {
+        // handle error response from server
+      }
+    };
+    xhr.send(JSON.stringify(params));
+  }
+
+</script>
+
+
+</html>
+{% endblock %}

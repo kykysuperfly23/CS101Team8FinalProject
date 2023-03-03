@@ -1,0 +1,246 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*font-family: 'Open Sans', sans-serif;*/
+}
+
+body {
+    /*background-color: lightblue;*/
+    /*background-color: #78B981;*/
+    background-color: #60B248;
+    /*background-color: #106E42;*/
+  }
+  
+h1 {
+    /*color: #09316A;*/
+    color:#25427D;
+    /*margin-left: 20px;*/
+    text-align: center;
+  }
+
+h3 {
+    text-align: center;
+  }
+
+h4 {
+    text-align: center;
+  }
+
+#cornerlogo {
+
+    position: relative;
+
+    }
+
+#mainpageUL {
+
+  /*background-color: #9CCC8C;
+  /*background-color: #60B248;
+  background-color:#73ba5e;*/
+  background-color:#80C06C;
+  margin-left: 15%;
+  margin-right: 15%;
+  list-style-type: none;
+
+}
+
+.homeLi {
+
+  display: inline-block;
+  border: 4px;
+  border-color:#78B981;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.homeLi label {
+  display: inline-block;
+}
+
+.homeLi p.mainDeadline {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.homeBr {
+  height:20%;
+}
+
+#cornerlogo img {
+
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        max-width: 20%;
+        height: auto;
+    }
+
+#healthguide{
+
+  max-height: 20%;
+  width: 100%;
+
+  }
+
+#tfhrForm{
+
+  max-width: 30%;
+  height: auto;
+
+  } 
+
+#tfhrHolder{
+  text-align:center;
+  
+}
+
+/*link text deco stuff*/
+a:link {
+
+  text-decoration: none;
+  /*color: #417DB0;*/
+  color: #25427D;
+
+}    
+
+a:visited{
+  
+  text-decoration: none;
+
+}
+
+a:hover{
+
+  /*color:deeppink;*/
+  color:#BF3D69;
+
+}
+
+/*#logout{
+  color:#15A5D7;
+}*/
+
+.headerImage{
+  text-align: center;
+  width: 300px;
+  height:20%;
+}
+
+.header{
+  text-align:center
+}
+
+a:active{
+
+  text-decoration: none;
+
+}
+
+.dlDate{
+  font-style:italic;
+}
+
+#heavyDL{
+  color: #8B0200;
+}
+
+#whole-Nav {
+
+  background-color: #09316A;
+  /*background-color: #25427D;*/
+
+}
+
+#button-div {
+
+  text-align: center;
+
+}
+
+#save-btn {
+
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 15%;
+  background-color: #106E42;
+  color: white;
+  border-color: #106E42;
+
+}
+
+input[type=checkbox] {
+  transform: scale(2); /* adjust the value to make the checkbox larger or smaller */
+  margin-right:10px;
+  margin-left: 10px;
+}
+
+input[type="checkbox"]:checked {
+  color: #33996B;
+}
+
+.mainDeadline {
+  color: #8B0200;
+}
+
+.deadline_passed {
+  color: black;
+}
+
+.nonDeadline{
+  color: black;
+}
+
+.nondeadline_passed {
+  /*color: #33996B;*/
+  color: #106E42;
+}
+
+#arrival {
+  display: inline;
+}
+
+.pageDesc{
+  text-align: center;
+  font-weight: bold;
+  /*text-decoration-thickness: 5px;*/
+}
+
+#cornerImage {
+  width: 2.5%;
+  height: auto;
+}
+
+#check{
+  display: inline;
+}
+
+#taskDesc {
+  font-style: italic;
+  text-align: center;
+}
+
+li{
+  margin-left: 5%;
+}
+
+div .info {
+  /*background-color: #9CCC8C;
+  background-color: #60B248;*/
+  background-color:#80C06C;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+a {
+  /*color: #25427D;*/
+  /*color:#15A5D7;*/
+  color:#1582D7;
+}

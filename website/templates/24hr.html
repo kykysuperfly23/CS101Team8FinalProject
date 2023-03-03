@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}24HR ACCOMODATION{% endblock %} {% block content%}
+    <br>
+
+    <h1>Welcome to the 24hr Accomodation Form Page</h1>
+    <h4 class="dlDate" id="heavyDL">Your current deadline for this item is: {{ twofourDL }}</h4>
+
+    <br>
+    <h6 id="taskDesc">This is form that must be submitted to the west gate police department. You need to get it done within 24 hours of arrival!</h6>
+    <br>
+
+    <div class="info">
+        <p>It's suggested that you submit this yourself to the west gate police department, but ISS doesn't mind if you run the form by them to check for errors during working hours. If you arrive on a weekend, or you have any questions, vist <a href="https://sakai.duke.edu/access/content/group/cf4a52e6-d630-47d8-a33b-f92b5c168722/24h%20Accommodation%20Form%20and%20Sample/24h%20Accommodation%20Form%20Guideline.pdf">this FAQ page</a>, then email ISS!</p>
+
+        <p>Below is the example of the form. You can also find a link to the empty pdf <a href="https://sakai.duke.edu/portal/site/cf4a52e6-d630-47d8-a33b-f92b5c168722/tool/00a8a69e-180e-4d54-bfd2-bc2aa009cec3?panel=Main">here</a> for you to fill out on the sakai international students page. </p>
+        <p>You will also need to provide a copy of your stamped entry page, your visa page, and your passport information page. This can be obtained by scanning those pages on the copy macihne OR printing copies utilizing the printer app, which can be found in the extra info page.</p>
+    </div>
+
+        <br>
+    <div id="tfhrHolder">
+        <img id="tfhrForm" src="{{ url_for('static', filename='accomodation.png') }}">
+    </div>
+
+{% endblock %}
